@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login Mikrotic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+   body{
+       background: url("g6.jpg");
+       background-size:100%;
+       background-repeat: no-repeat;
+   }
+   section{
+       width:37%;
+
+       height:86vh;
+       padding:1.3%;
+       margin: auto;
+       margin-top:2%;
+       position: relative;
+       border:2px solid white;
+       z-index: 10;
+       border-bottom-right-radius: 37px;
+       border-top-left-radius: 37px;
+       outline-offset: 4px;
+       outline: 2px solid white;
+       -moz-outline-radius-topleft: 40px;
+       -moz-outline-radius-bottomright: 40px;
+color:white;
+font-size: 28px;
+padding-left: 3%;
+text-align: left;
+   }
+  br{
+      margin:1.3%;
+  }
+  section>div{
+      text-align: center;
+  }
+  button{
+      border:1px solid blue;
+      width:25%;
+      padding:2%;
+      color:white;
+      font-size:18px;
+      background: linear-gradient(rgb(7, 7, 235),rgb(2, 2, 145));
+      border-radius:6px;
+margin-left:auto;
+cursor: pointer;
+  }
+    </style>
+</head>
+<body>
+
+  <section>
+  <div>Welcome User</div>  
+<br>
+   <span>Date :</span><br>
+   <span>Time :</span><br>
+   <span>Uplink :</span><br>
+   <span>DownLink :</span><br>
+   
+   <span>Total Uploaded :</span><br>
+   <span>Total Downloaded :</span><br>
+   
+   <a href="login.html"><button>Log Out</button></a>
+  </section> 
+  <script>
+
+      var total_up=0;
+      var total_down=0;
+     var counter=0;
+     var a=[1,0.1,0.3,0.2,0.5,0.6,0.4,0.7,0.8,0.9,1];
+
+var uplink=a[Math.floor(Math.random()*11)];
+  var downlink=a[Math.floor(Math.random()*11)];
+total_up+=uplink;
+  total_down+=downlink;
+  var a1 = new Date().toLocaleTimeString().toString();
+    var b=new Date().toDateString().toString();
+    document.getElementsByTagName("span")[0].innerHTML="Date : "+b;
+    document.getElementsByTagName("span")[1].innerHTML="Time : "+a1;
+    document.getElementsByTagName("span")[2].innerHTML="Uplink : "+uplink+"mb/s";
+    document.getElementsByTagName("span")[3].innerHTML="DownLink : "+downlink+"mb/s";
+    document.getElementsByTagName("span")[5].innerHTML="Total Downloaded : "+total_down.toFixed(2)+"mb";
+    document.getElementsByTagName("span")[4].innerHTML="Total Uploaded : "+total_up.toFixed(2)+"mb";
+setInterval(function(){
+    var a=[1,0.1,0.3,0.2,0.5,0.6,0.4,0.7,0.8,0.9,1];
+
+    var uplink=a[Math.floor(Math.random()*11)];
+      var downlink=a[Math.floor(Math.random()*11)];
+    total_up+=uplink;
+      total_down+=downlink;
+      var a1 = new Date().toLocaleTimeString().toString();
+        var b=new Date().toDateString().toString();
+        document.getElementsByTagName("span")[0].innerHTML="Date : "+b;
+        document.getElementsByTagName("span")[1].innerHTML="Time : "+a1;
+        document.getElementsByTagName("span")[2].innerHTML="Uplink : "+uplink+"mb/s";
+        document.getElementsByTagName("span")[3].innerHTML="DownLink : "+downlink+"mb/s";
+        document.getElementsByTagName("span")[5].innerHTML="Total Downloaded : "+total_down.toFixed(2)+"mb";
+        document.getElementsByTagName("span")[4].innerHTML="Total Uploaded : "+total_up.toFixed(2)+"mb";
+
+},1000);
+      
+  </script>
+         
+</body>
+</html>
